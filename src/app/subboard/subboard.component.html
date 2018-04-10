@@ -1,0 +1,5 @@
+<mat-grid-list cols="3" rowHeight="1.5em">
+  <mat-grid-tile *ngFor="let tile of tiles" [colspan]=1 [rowspan]=1>
+    <button mat-button>{{tile}}</button>
+  </mat-grid-tile>
+</mat-grid-list>

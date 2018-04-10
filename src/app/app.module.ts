@@ -3,14 +3,19 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { SubboardComponent } from './subboard/subboard.component';
 
+import { MatGridListModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SubboardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatGridListModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
