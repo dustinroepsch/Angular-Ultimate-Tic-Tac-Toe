@@ -1,8 +1,8 @@
 <mat-card class="subboard-card">
   <mat-card-content>
       <mat-grid-list cols="3">
-          <mat-grid-tile *ngFor="let tile of state.tiles" [colspan]=1 [rowspan]=1>
-            <button mat-raised-button>x</button>
+          <mat-grid-tile *ngFor="let tile of subboardState.tileStates" [colspan]=1 [rowspan]=1>
+            <button mat-raised-button>{{tile.value}}</button>
           </mat-grid-tile>
         </mat-grid-list>
   </mat-card-content>

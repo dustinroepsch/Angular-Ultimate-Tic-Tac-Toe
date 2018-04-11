@@ -8,6 +8,8 @@ import { SubboardComponent } from './subboard/subboard.component';
 import { MatGridListModule, MatButtonModule, MatCardModule } from '@angular/material';
 import { BoardComponent } from './board/board.component';
 
+import {GamestateService} from './gamestate.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,7 @@ import { BoardComponent } from './board/board.component';
     MatButtonModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [GamestateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

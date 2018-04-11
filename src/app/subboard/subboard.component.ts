@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SubboardState } from '../subboardstate';
+import { GamestateService } from '../gamestate.service';
+import { SubboardState } from '../subboard.state';
+import { Coordinate } from '../coordinate';
 
 @Component({
   selector: 'app-subboard',
@@ -7,12 +9,14 @@ import { SubboardState } from '../subboardstate';
   styleUrls: ['./subboard.component.css']
 })
 export class SubboardComponent implements OnInit {
+  @Input() coordinate: Coordinate;
 
- @Input() state: SubboardState = new SubboardState();
+  private subboardState: SubboardState;
 
-  constructor() { }
+  constructor(private gamestateService: GamestateService) { }
 
   ngOnInit() {
+    this.subboardState = this.gamestateService.getSubboardState(this.coordinate);
   }
 
 }

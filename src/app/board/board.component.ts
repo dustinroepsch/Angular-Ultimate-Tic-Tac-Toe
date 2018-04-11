@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SubboardState } from '../subboardstate';
+import { GamestateService } from '../gamestate.service';
+import { Coordinate } from '../coordinate';
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -7,13 +9,10 @@ import { SubboardState } from '../subboardstate';
 })
 export class BoardComponent implements OnInit {
 
-  constructor() { }
+  private subboardCoors: Coordinate[] = Coordinate.range(3, 3);
 
-  subboardStates: SubboardState[] = [
-    new SubboardState(), new SubboardState(), new SubboardState(),
-    new SubboardState(), new SubboardState(), new SubboardState(),
-    new SubboardState(), new SubboardState(), new SubboardState()
-  ]
+  constructor(private gamestateService: GamestateService) { }
+
   ngOnInit() {
   }
 

@@ -1,7 +1,7 @@
 <div class="board">
     <mat-grid-list cols="3">
-        <mat-grid-tile *ngFor="let subboardState of subboardStates" [colspan]=1 [rowspan]=1>
-          <app-subboard [state]="subboardState"></app-subboard>
+        <mat-grid-tile *ngFor="let coordinate of subboardCoors" [colspan]=1 [rowspan]=1>
+            <app-subboard [coordinate]="coordinate"></app-subboard>
         </mat-grid-tile>
     </mat-grid-list>
 </div>
