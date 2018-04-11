@@ -20,8 +20,9 @@ export class SubboardComponent implements OnInit {
   }
 
   tileClicked(tile: TileState): void {
-    tile.value = TileValue.X;
+    tile.value = this.gamestateService.currentPlayerValue();
     this.gamestateService.setActiveSubboard(tile.coordinate);
+    this.gamestateService.endTurn();    
   }
 
   tileIsDisabled(tile: TileState): boolean {
