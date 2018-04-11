@@ -11,7 +11,7 @@ export class BoardComponent implements OnInit {
 
   public subboardCoors: Coordinate[] = Coordinate.range(3, 3);
 
-  constructor(private gamestateService: GamestateService) { }
+  constructor(public gamestateService: GamestateService) { }
 
   ngOnInit() {
   }
