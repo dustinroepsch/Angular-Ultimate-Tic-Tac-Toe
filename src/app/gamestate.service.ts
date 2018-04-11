@@ -20,4 +20,11 @@ export class GamestateService {
     return coordinate.row * 3 + coordinate.col;
   }
 
+  public setActiveSubboard(coordinate: Coordinate) {
+    for (let subboardState of this.subboardStates) {
+        subboardState.isActive = false;
+    }
+    this.subboardStates[GamestateService.getIndex(coordinate)].isActive = true;
+  }
+
 }

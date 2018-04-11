@@ -1,3 +1,5 @@
+import { Coordinate } from './coordinate';
+
 enum TileValue {
     Empty = "-",
     X = "X",
@@ -5,15 +7,13 @@ enum TileValue {
 }
 
 class TileState {
+    constructor(public coordinate: Coordinate) { };
     public value: TileValue = TileValue.Empty;
 }
 
 class SubboardState {
-    public tileStates: TileState[] = [
-        new TileState(), new TileState(), new TileState(),
-        new TileState(), new TileState(), new TileState(),
-        new TileState(), new TileState(), new TileState()
-    ];
+    public tileStates: TileState[] = Coordinate.range(3, 3).map(coordinate => new TileState(coordinate));
+    public isActive: boolean = true;
 }
 
-export {SubboardState};
+export { SubboardState, TileValue, TileState };

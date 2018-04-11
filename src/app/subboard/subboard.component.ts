@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GamestateService } from '../gamestate.service';
-import { SubboardState } from '../subboard.state';
+import { SubboardState, TileValue, TileState } from '../subboard.state';
 import { Coordinate } from '../coordinate';
 
 @Component({
@@ -11,12 +11,21 @@ import { Coordinate } from '../coordinate';
 export class SubboardComponent implements OnInit {
   @Input() coordinate: Coordinate;
 
-  private subboardState: SubboardState;
+  public subboardState: SubboardState;
 
   constructor(private gamestateService: GamestateService) { }
 
   ngOnInit() {
     this.subboardState = this.gamestateService.getSubboardState(this.coordinate);
+  }
+
+  tileClicked(tile: TileState): void {
+    tile.value = TileValue.X;
+    this.gamestateService.setActiveSubboard(tile.coordinate);
+  }
+
+  tileIsDisabled(tile: TileState): boolean {
+    return !this.subboardState.isActive || tile.value != TileValue.Empty;
   }
 
 }

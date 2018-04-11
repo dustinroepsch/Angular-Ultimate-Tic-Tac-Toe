@@ -9,7 +9,7 @@ import { Coordinate } from '../coordinate';
 })
 export class BoardComponent implements OnInit {
 
-  private subboardCoors: Coordinate[] = Coordinate.range(3, 3);
+  public subboardCoors: Coordinate[] = Coordinate.range(3, 3);
 
   constructor(private gamestateService: GamestateService) { }
 
