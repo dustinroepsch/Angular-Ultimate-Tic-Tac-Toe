@@ -13,7 +13,7 @@ export class SubboardComponent implements OnInit {
 
   public subboardState: SubboardState;
 
-  constructor(private gamestateService: GamestateService) { }
+  constructor(public gamestateService: GamestateService) { }
 
   ngOnInit() {
     this.subboardState = this.gamestateService.getSubboardState(this.coordinate);

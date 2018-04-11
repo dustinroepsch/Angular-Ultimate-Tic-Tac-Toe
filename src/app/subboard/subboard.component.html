@@ -1,9 +1,10 @@
-<mat-card class="subboard-card">
+<mat-card *ngIf="!gamestateService.subgameHasWinner(coordinate)" class="subboard-card">
   <mat-card-content>
-      <mat-grid-list cols="3">
-          <mat-grid-tile *ngFor="let tile of subboardState.tileStates" [colspan]=1 [rowspan]=1>
-            <button mat-raised-button [disabled]="tileIsDisabled(tile)" (click)="tileClicked(tile)">{{tile.value}}</button>
-          </mat-grid-tile>
-        </mat-grid-list>
+    <mat-grid-list cols="3">
+      <mat-grid-tile *ngFor="let tile of subboardState.tileStates" [colspan]=1 [rowspan]=1>
+        <button mat-raised-button [disabled]="tileIsDisabled(tile)" (click)="tileClicked(tile)">{{tile.value}}</button>
+      </mat-grid-tile>
+    </mat-grid-list>
   </mat-card-content>
 </mat-card>
+<app-finished-subgame *ngIf="gamestateService.subgameHasWinner(coordinate)" [winner]="gamestateService.subgameWinner(coordinate)"></app-finished-subgame>

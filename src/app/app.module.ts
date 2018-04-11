@@ -9,12 +9,14 @@ import { MatGridListModule, MatButtonModule, MatCardModule } from '@angular/mate
 import { BoardComponent } from './board/board.component';
 
 import {GamestateService} from './gamestate.service';
+import { FinishedSubgameComponent } from './finished-subgame/finished-subgame.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubboardComponent,
-    BoardComponent
+    BoardComponent,
+    FinishedSubgameComponent
   ],
   imports: [
     BrowserModule,
