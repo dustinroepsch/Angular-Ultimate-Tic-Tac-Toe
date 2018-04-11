@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TileState } from '../tilestate';
+import { Component, OnInit, Input } from '@angular/core';
+import { SubboardState } from '../subboardstate';
 
 @Component({
   selector: 'app-subboard',
@@ -8,11 +8,7 @@ import { TileState } from '../tilestate';
 })
 export class SubboardComponent implements OnInit {
 
-  tiles: TileState[] = [
-    TileState.Empty, TileState.Empty, TileState.Empty,
-    TileState.Empty, TileState.Empty, TileState.Empty,
-    TileState.Empty, TileState.Empty, TileState.Empty
-  ]
+ @Input() state: SubboardState = new SubboardState();
 
   constructor() { }
 

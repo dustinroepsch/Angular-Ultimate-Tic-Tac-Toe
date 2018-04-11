@@ -1,5 +1,9 @@
-<mat-grid-list cols="3" rowHeight="1.5em">
-  <mat-grid-tile *ngFor="let tile of tiles" [colspan]=1 [rowspan]=1>
-    <button mat-button>{{tile}}</button>
-  </mat-grid-tile>
-</mat-grid-list>
+<mat-card class="subboard-card">
+  <mat-card-content>
+      <mat-grid-list cols="3">
+          <mat-grid-tile *ngFor="let tile of state.tiles" [colspan]=1 [rowspan]=1>
+            <button mat-raised-button>x</button>
+          </mat-grid-tile>
+        </mat-grid-list>
+  </mat-card-content>
+</mat-card>
